@@ -8,7 +8,6 @@ import {
 	Text,
 } from "@react-email/components"
 import * as React from "react"
-
 import { container, heading, hr, main, paragraphContent } from "./styles"
 
 type Props = {

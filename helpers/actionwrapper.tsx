@@ -1,14 +1,12 @@
-import { Section, Text, Button, Img } from "@react-email/components"
+import { Section, Text, Button } from "@react-email/components"
 import * as React from "react"
-import Wrapper from "../helpers/wrapper"
 import {
 	button,
 	buttonContent,
-	footerText,
-	logo,
 	paragraph,
 	paragraphContent,
 } from "../helpers/styles"
+import LogoWrapper from "./logowrapper"
 
 type Props = {
 	title: string
@@ -24,17 +22,12 @@ type Props = {
 
 export default function ActionWrapper(props: Props) {
 	return (
-		<Wrapper
+		<LogoWrapper
 			title={props.title}
-			logo={
-				<Img
-					src={props.logoUrl}
-					width={props.logoWidth}
-					alt={props.logoAlt}
-					style={logo}
-				/>
-			}
-			footer={<Text style={footerText}>{props.footerText}</Text>}
+			logoUrl={props.logoUrl}
+			logoWidth={props.logoWidth}
+			logoAlt={props.logoAlt}
+			footerText={props.footerText}
 		>
 			<Section style={paragraphContent}>
 				<Text style={paragraph}>{props.bodyText}</Text>
@@ -45,6 +38,6 @@ export default function ActionWrapper(props: Props) {
 				</Button>
 			</Section>
 			{props.children}
-		</Wrapper>
+		</LogoWrapper>
 	)
 }
